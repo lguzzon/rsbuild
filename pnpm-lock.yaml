@@ -588,8 +588,8 @@ importers:
         version: 2.3.3
     devDependencies:
       '@rslib/core':
-        specifier: 0.0.16
-        version: 0.0.16(typescript@5.6.3)
+        specifier: 0.0.17
+        version: 0.0.17(typescript@5.6.3)
       '@types/connect':
         specifier: 3.4.38
         version: 3.4.38
@@ -2464,6 +2464,11 @@ packages:
     engines: {node: '>=16.7.0'}
     hasBin: true
 
+  '@rsbuild/core@1.1.0':
+    resolution: {integrity: sha512-SyQlJjWgR1VwLt4nuiY0g6L9INv2koH232TeDZuopvNgbRytskD3kJ8bbGWBBXsQjZjtqBEh5ishqf8CIfF8dQ==}
+    engines: {node: '>=16.7.0'}
+    hasBin: true
+
   '@rsbuild/plugin-babel@1.0.3':
     resolution: {integrity: sha512-3S/ykXv7KRo0FxVpkjoHFUwB04nKINIET1kuv4xiRaDmeww1Tp0wl9h4u8a7d7gU/4FllyoUflY8TVhci/o05g==}
     peerDependencies:
@@ -2510,6 +2515,19 @@ packages:
 
   '@rslib/core@0.0.16':
     resolution: {integrity: sha512-g6IFUZW0K7DDKK/27kF7DOKhP5JIqZoIVAU0c9DZffRE3Pw9sWTyEyVN/kaEnp5k3gaeQTBpcV9nSW+41B2slQ==}
+    engines: {node: '>=16.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@microsoft/api-extractor': ^7
+      typescript: ^5
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      typescript:
+        optional: true
+
+  '@rslib/core@0.0.17':
+    resolution: {integrity: sha512-o7jYVEN9uUDn876Xr+vHo1HflWTMCZUpS7DNsNHiyLHtoKu+zPUXh6oAIqMnAZQ6qELgSw2Z+3guGuFUCI9cAg==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -5672,6 +5690,19 @@ packages:
       typescript:
         optional: true
 
+  rsbuild-plugin-dts@0.0.17:
+    resolution: {integrity: sha512-28hwMuhkP7G9om0PpVB0fajP+Q2HsQCv+fYEpEe4PknRbQT1dwS0HnCkkcUeF0ynwfp55wlopMuUk/m2JKFbjg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@microsoft/api-extractor': ^7
+      '@rsbuild/core': 1.x
+      typescript: ^5
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      typescript:
+        optional: true
+
   rsbuild-plugin-google-analytics@1.0.3:
     resolution: {integrity: sha512-9AaubhqxiJ46yuBDkXtIjUnhMLUjGtMtRUeU9vkTrC4CfbJkHsHASwRJIRIxV7XMbr5Mwn/Ithh6lNh79RqehQ==}
     peerDependencies:
@@ -8137,6 +8168,15 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
+  '@rsbuild/core@1.1.0':
+    dependencies:
+      '@rspack/core': 1.1.0(@swc/helpers@0.5.15)
+      '@rspack/lite-tapable': 1.0.1
+      '@swc/helpers': 0.5.15
+      core-js: 3.39.0
+    optionalDependencies:
+      fsevents: 2.3.3
+
   '@rsbuild/plugin-babel@1.0.3(@rsbuild/core@packages+core)':
     dependencies:
       '@babel/core': 7.26.0
@@ -8204,6 +8244,14 @@ snapshots:
     dependencies:
       '@rsbuild/core': 1.0.19
       rsbuild-plugin-dts: 0.0.16(@rsbuild/core@1.0.19)(typescript@5.6.3)
+      tinyglobby: 0.2.10
+    optionalDependencies:
+      typescript: 5.6.3
+
+  '@rslib/core@0.0.17(typescript@5.6.3)':
+    dependencies:
+      '@rsbuild/core': 1.1.0
+      rsbuild-plugin-dts: 0.0.17(@rsbuild/core@1.1.0)(typescript@5.6.3)
       tinyglobby: 0.2.10
     optionalDependencies:
       typescript: 5.6.3
@@ -11859,6 +11907,15 @@ snapshots:
   rsbuild-plugin-dts@0.0.16(@rsbuild/core@1.0.19)(typescript@5.6.3):
     dependencies:
       '@rsbuild/core': 1.0.19
+      magic-string: 0.30.12
+      picocolors: 1.1.1
+      tinyglobby: 0.2.10
+    optionalDependencies:
+      typescript: 5.6.3
+
+  rsbuild-plugin-dts@0.0.17(@rsbuild/core@1.1.0)(typescript@5.6.3):
+    dependencies:
+      '@rsbuild/core': 1.1.0
       magic-string: 0.30.12
       picocolors: 1.1.1
       tinyglobby: 0.2.10
